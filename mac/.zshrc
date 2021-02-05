@@ -111,7 +111,6 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 # Set Spaceship ZSH as a prompt (When installed via yarn)
-# (This gets auto added to the file from yarn install spaceship-prompt)
 autoload -U promptinit; promptinit
 prompt spaceship
 

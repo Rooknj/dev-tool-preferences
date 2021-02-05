@@ -1,0 +1,42 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "ux-infra/hombrew-uxfabric-tools", "git@github.intuit.com:UX-Infra/homebrew-uxfabric-tools.git"
+# Image processing tools collection
+brew "graphicsmagick"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Java-based project management
+brew "maven"
+# Manage multiple Node.js versions
+brew "nvm"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
+# Watch files and take action when they change
+brew "watchman"
+# JavaScript package manager
+brew "yarn"
+# Successor to Plugin Build. Used to develop AppFabric Plugins at Intuit
+brew "ux-infra/hombrew-uxfabric-tools/plugin-cli"
+# Web browser
+cask "firefox"
+cask "font-fira-code"
+# Desktop client for GitHub repositories
+cask "github"
+# Web browser
+cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Multi-platform web browser
+cask "microsoft-edge"
+# App to write, plan, collaborate, and get organized
+cask "notion"
+# Collaboration platform for API development
+cask "postman"
+# Music streaming service
+cask "spotify"
+# Open-source code editor
+cask "visual-studio-code"
