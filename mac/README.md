@@ -26,7 +26,8 @@ git clone https://github.com/Rooknj/dev-tool-preferences.git ~/.dotfiles
 # There are better and less manual ways to do this;
 # investigate install scripts and bootstrapping tools.
 
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/mac/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/mac/.ssh/config ~/.ssh/config
 # ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ```
 
