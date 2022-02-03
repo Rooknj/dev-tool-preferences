@@ -119,9 +119,29 @@ export MAVEN_OPTS="-Xmx5120m -XX:-UseGCOverheadLimit"
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# Java version manager jEnv setup
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+# How to set up jEnv with Amazon Corretto
+# https://chamikakasun.medium.com/how-to-manage-multiple-java-version-in-macos-e5421345f6d0
+# first install all Amazon Corretto versions
+# brew install jenv
+# # ensure that JAVA_HOME is correct
+# jenv enable-plugin export
+# # make Maven aware of the Java version in use (and switch when your project does)
+# jenv enable-plugin maven
+# run jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+# run jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+# set default version with jenv global 14.0
+
+# Old java setup
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home"
+
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 alias qbo='cd /Users/nrook/dev/qbo/src/qbo; /Users/nrook/dev/ecosystem-docker/start.sh'
 
+alias idea='open -na "IntelliJ IDEA.app"'
