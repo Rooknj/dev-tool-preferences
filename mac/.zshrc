@@ -132,7 +132,7 @@ eval "$(jenv init -)"
 # jenv enable-plugin maven
 # run jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 # run jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
-# set default version with jenv global 14.0
+# set default version with jenv global <VERSION>
 
 # Old java setup
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home"
@@ -145,3 +145,9 @@ export NVM_DIR="$HOME/.nvm"
 alias qbo='cd /Users/nrook/dev/qbo/src/qbo; /Users/nrook/dev/ecosystem-docker/start.sh'
 
 alias idea='open -na "IntelliJ IDEA.app"'
+
+# Enable oracle 19C support for Java Monolith
+export ENABLE_ORACLE19C=true
+
+# Run MSaaS applications locally
+export NEXUS_PROXY_URL=https://nexus.intuit.com/nexus
