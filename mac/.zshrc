@@ -151,3 +151,6 @@ export ENABLE_ORACLE19C=true
 
 # Run MSaaS applications locally
 export NEXUS_PROXY_URL=https://nexus.intuit.com/nexus
+
+# python poetry package manager
+export PATH="/Users/nrook/.local/bin:$PATH"
