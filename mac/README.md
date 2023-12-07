@@ -1,23 +1,32 @@
 # Installation
 
 ## Steps to bootstrap a new Mac
-0. Install required apps
+0. Set up Mac Settings
+    - Turn on Night Shift
+    - Set up TouchID
+    - Set up Wallpaper [./mac/pictures](./mac/pictures)
+    - Turn on Dark Mode Appearance
+    - Log into Apple iCloud account
+    - Update to latest software
+
+1. Install required apps
 
     - Iterm2: https://iterm2.com/
     - VSCode: https://code.visualstudio.com/
         - Sync with rooknj@gmail.com github account 
+        - Install code command in PATH
     - IntelliJ: https://www.jetbrains.com/idea/download/?section=mac
         - Sync with rooknj@gmail.com account 
     - Github Desktop: https://desktop.github.com/
 
-1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew. (Might already be done)
+2. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew. (Might already be done)
 
 ```zsh
 xcode-select --install
 ```
 
 
-2. Clone repo into new hidden directory.
+3. Clone repo into new hidden directory.
 
 ```zsh
 # Use SSH (if set up)...
@@ -27,7 +36,7 @@ git clone git@github.com:Rooknj/dev-tool-preferences.git ~/.dotfiles
 git clone https://github.com/Rooknj/dev-tool-preferences.git ~/.dotfiles
 ```
 
-3. Install Homebrew, followed by the software listed in the Brewfile.
+4. Install Homebrew, followed by the software listed in the Brewfile.
 
 ```zsh
 # These could also be in an install script.
@@ -42,7 +51,7 @@ brew bundle --file ~/.dotfiles/mac/Brewfile
 cd ~/.dotfiles/mac && brew bundle
 ```
 
-4. Install oh-my-zsh and Spaceship Prompt
+5. Install oh-my-zsh and Spaceship Prompt
     1. Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
         - Yes you need to install it even on OSX Catalina where zsh is default
         - It gives you the different colors for directories and files
@@ -52,7 +61,7 @@ cd ~/.dotfiles/mac && brew bundle
         ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
         ```
 
-5. Create symlinks in the Home directory to the real files in the repo.
+6. Create symlinks in the Home directory to the real files in the repo.
 
 ```zsh
 # There are better and less manual ways to do this;
@@ -61,18 +70,34 @@ cd ~/.dotfiles/mac && brew bundle
 # sudo ln -s ~/.dotfiles/mac/etc/hosts /etc/hosts
 
 rm ~/.zshrc
-rm ~/.gitconfig
 ln -s ~/.dotfiles/mac/.spaceshiprc.zsh ~/.spaceshiprc.zsh
 ln -s ~/.dotfiles/mac/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/mac/.npmrc ~/.npmrc
-ln -s ~/.dotfiles/mac/.gitconfig ~/.gitconfig
+# ln -s ~/.dotfiles/mac/.gitconfig ~/.gitconfig
 ```
 
-6. Other scripts
+7. Intuit Specific Setup
+
+Set up Zoom Background
+- Zoom Backgrounds[./mac/pictures](./mac/pictures)
+
+
+Set up SSH Keys: Github
 ```zsh
 ssh-keygen -t rsa
 chmod 600 ~/.ssh/id_rsa
 if grep -q ENCRYPT ~/.ssh/id_rsa*; then echo "ERROR: Key is encrypted"; else echo "Key is good."; fi
+```
+
+Set up SSH Keys: Devportal
+```zsh
+ssh-keygen -t rsa
+chmod 600 ~/.ssh/id_rsa
+if grep -q ENCRYPT ~/.ssh/id_rsa*; then echo "ERROR: Key is encrypted"; else echo "Key is good."; fi
+```
+
+Set up Plugin CLI
+```zsh
 npx @appfabric/webtools-mgr install @appfabric/webtools-mgr --set-global --force
 appf-webtools-mgr install @appfabric/plugin-cli --set-global --force
 
