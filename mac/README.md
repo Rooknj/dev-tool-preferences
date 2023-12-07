@@ -59,11 +59,11 @@ cd ~/.dotfiles/mac && brew bundle
 ```zsh
 # There are better and less manual ways to do this;
 # investigate install scripts and bootstrapping tools.
+# Note, you can't symlink the hosts file. It just doesn't work
+# sudo ln -s ~/.dotfiles/mac/etc/hosts /etc/hosts
 
-sudo ln -s ~/.dotfiles/mac/etc/hosts /etc/hosts
 ln -s ~/.dotfiles/mac/.spaceshiprc.zsh ~/.spaceshiprc.zsh
 ln -s ~/.dotfiles/mac/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/mac/.ssh/config ~/.ssh/config
 ln -s ~/.dotfiles/mac/.npmrc ~/.npmrc
 ln -s ~/.dotfiles/mac/.gitconfig ~/.gitconfig
 ```
