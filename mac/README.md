@@ -3,12 +3,12 @@
 ## Steps to bootstrap a new Mac
 0. Install required apps
 
-Iterm2: https://iterm2.com/
-VSCode: https://code.visualstudio.com/
-IntelliJ: https://www.jetbrains.com/idea/download/?section=mac
-Github Desktop: https://desktop.github.com/
+    - Iterm2: https://iterm2.com/
+    - VSCode: https://code.visualstudio.com/
+    - IntelliJ: https://www.jetbrains.com/idea/download/?section=mac
+    - Github Desktop: https://desktop.github.com/
 
-2. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew. (Might already be done)
+1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew. (Might already be done)
 
 ```zsh
 xcode-select --install
