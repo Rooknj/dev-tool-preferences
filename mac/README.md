@@ -5,7 +5,9 @@
 
     - Iterm2: https://iterm2.com/
     - VSCode: https://code.visualstudio.com/
+        - Sync with rooknj@gmail.com github account 
     - IntelliJ: https://www.jetbrains.com/idea/download/?section=mac
+        - Sync with nick_rook@intuit.com account 
     - Github Desktop: https://desktop.github.com/
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew. (Might already be done)
