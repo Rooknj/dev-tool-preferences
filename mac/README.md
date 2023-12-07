@@ -82,26 +82,66 @@ Set up Zoom Background
 - Zoom Backgrounds[./mac/pictures](./mac/pictures)
 
 
-Set up SSH Keys: Github
+Set up SSH Keys: Github Enterprise
 ```zsh
-ssh-keygen -t rsa
-chmod 600 ~/.ssh/id_rsa
-if grep -q ENCRYPT ~/.ssh/id_rsa*; then echo "ERROR: Key is encrypted"; else echo "Key is good."; fi
+ssh-keygen -t ed25519 -C "nick_rook@intuit.com"
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+code ~/.ssh/config
 ```
+Then paste this inside ~/.ssh/config
+```
+Host github.intuit.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+  # Prevent ssh from timing out when running git hooks on push
+  ServerAliveInterval 30
+  ServerAliveCountMax 10
+```
+
+Then add to github.
+
+```zsh
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+Install Java with jenv
+  - [Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
+  - [Corretto 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)
+
+```zsh
+jenv enable-plugin export
+# make Maven aware of the Java version in use (and switch when your project does)
+jenv enable-plugin maven
+jenv enable-plugin gradle
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+jenv global 11.0
+```
+
 
 Set up SSH Keys: Devportal
 ```zsh
-ssh-keygen -t rsa
+ssh-keygen -t rsa -b 4096 -C "nick_rook@intuit.com"
 chmod 600 ~/.ssh/id_rsa
 if grep -q ENCRYPT ~/.ssh/id_rsa*; then echo "ERROR: Key is encrypted"; else echo "Key is good."; fi
 ```
 
 Set up Plugin CLI
+
+https://github.intuit.com/pages/UX-Infra/plugin-cli/docs/webtools-manager
 ```zsh
+nvm install lts/fermium
+npm config set registry https://registry.npmjs.intuit.com/
 npx @appfabric/webtools-mgr install @appfabric/webtools-mgr --set-global --force
 appf-webtools-mgr install @appfabric/plugin-cli --set-global --force
-
 ```
+
+Download postman
+https://www.postman.com/downloads/?utm_source=postman-home
+
+
 
 ## TODO List
 

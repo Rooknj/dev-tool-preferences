@@ -14,6 +14,7 @@ brew "gradle"
 brew "nvm"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
+brew "python@3.10"
 # Watch files and take action when they change
 brew "watchman"
 # JavaScript package manager
