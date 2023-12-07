@@ -51,8 +51,6 @@ cd ~/.dotfiles/mac && brew bundle
         git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
         ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
         ```
-    3. Copy and paste the .zshrc file into your home directory
-
 
 5. Create symlinks in the Home directory to the real files in the repo.
 
@@ -62,6 +60,8 @@ cd ~/.dotfiles/mac && brew bundle
 # Note, you can't symlink the hosts file. It just doesn't work
 # sudo ln -s ~/.dotfiles/mac/etc/hosts /etc/hosts
 
+rm ~/.zshrc
+rm ~/.gitconfig
 ln -s ~/.dotfiles/mac/.spaceshiprc.zsh ~/.spaceshiprc.zsh
 ln -s ~/.dotfiles/mac/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/mac/.npmrc ~/.npmrc
