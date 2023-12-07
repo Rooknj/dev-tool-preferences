@@ -37,7 +37,7 @@ git clone https://github.com/Rooknj/dev-tool-preferences.git ~/.dotfiles
 brew bundle --file ~/.dotfiles/mac/Brewfile
 
 # ...or move to the directory first.
-cd ~/mac/.dotfiles && brew bundle
+cd ~/.dotfiles/mac && brew bundle
 ```
 
 4. Install oh-my-zsh and Spaceship Prompt
