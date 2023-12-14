@@ -120,12 +120,21 @@ jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
 jenv global 11.0
 ```
 
-
 Set up SSH Keys: Devportal
+
 ```zsh
-ssh-keygen -t rsa -b 4096 -C "nick_rook@intuit.com"
-chmod 600 ~/.ssh/id_rsa
-if grep -q ENCRYPT ~/.ssh/id_rsa*; then echo "ERROR: Key is encrypted"; else echo "Key is good."; fi
+ssh-keygen -t rsa -b 4096
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
+code ~/.ssh/config
+```
+Then paste this inside ~/.ssh/config
+```
+Host *
+ PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com,ssh-rsa
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile ~/.ssh/id_rsa
 ```
 
 Set up Plugin CLI
