@@ -44,3 +44,7 @@ cask "microsoft-edge"
 # cask "spotify"
 # Open-source code editor
 # cask "visual-studio-code"
+
+# Prevent apple music from opening up every time you connect headphones
+# Set on startup: https://github.com/tombonez/noTunes?tab=readme-ov-file#set-notunes-to-launch-at-startup
+cask "notunes"

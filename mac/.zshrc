@@ -89,7 +89,7 @@ alias qbo='cd /Users/nrook/dev/qbo/src/qbo; /Users/nrook/dev/ecosystem-docker/st
 
 alias idea='open -na "IntelliJ IDEA.app"'
 
-alias podmanRestart='podman machine rm -f && podman machine init && podman machine start && kubectl kustomize ./infra/dependencies/local | podman play kube --network podman -'
+alias podmanRestart='podman machine rm -f && podman machine init --cpus=2 -m=4096 && podman machine start && kubectl kustomize ./infra/dependencies/local-arm | podman play kube --network podman -'
 
 # Enable oracle 19C support for Java Monolith
 export ENABLE_ORACLE19C=true
