@@ -8,20 +8,20 @@ brew "graphicsmagick"
 brew "imagemagick"
 # Java-based project management
 brew "jenv"
-brew "maven"
-brew "gradle"
+# brew "maven"
+# brew "gradle"
 # Manage multiple Node.js versions
 brew "nvm"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
-brew "python@3.10"
+# brew "python@3.10"
 # Watch files and take action when they change
 brew "watchman"
 # JavaScript package manager
 brew "yarn"
 brew "ktlint"
 brew "kubernetes-cli"
-brew "podman"
+# brew "podman"
 brew "lefthook"
 # Web browser
 cask "firefox"
@@ -47,4 +47,4 @@ cask "microsoft-edge"
 
 # Prevent apple music from opening up every time you connect headphones
 # Set on startup: https://github.com/tombonez/noTunes?tab=readme-ov-file#set-notunes-to-launch-at-startup
-cask "notunes"
+# cask "notunes"
