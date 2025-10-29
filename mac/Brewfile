@@ -1,7 +1,8 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
+# No longer need to tap these as they are included by default
+# tap "homebrew/bundle"
+# tap "homebrew/cask"
+# tap "homebrew/cask-fonts"
+# tap "homebrew/core"
 # Image processing tools collection
 brew "graphicsmagick"
 # Tools and libraries to manipulate images in many formats
