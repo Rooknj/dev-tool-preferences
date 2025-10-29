@@ -109,6 +109,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 Install Java with jenv
   - [Corretto 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
   - [Corretto 17](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)
+  - [Corretto 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html)
 
 ```zsh
 jenv enable-plugin export
@@ -117,7 +118,8 @@ jenv enable-plugin maven
 jenv enable-plugin gradle
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
-jenv global 11.0
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
+jenv global 21.0
 ```
 
 Set up SSH Keys: Devportal
